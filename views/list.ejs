@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/pico.css">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="flex">
+
+        <div class="flex-box">
+            <% if(kindOfDay=="Saturday" || kindOfDay==="Sunday" ){ %>
+                <h1 style="color: green;">Its <%= kindOfDay %>! </h1>
+                <% }else{ %>
+                    <h1 style="color: red;">Its <%= kindOfDay %>!</h1>
+                    <%}%>
+                        <div class="container">
+
+
+
+                            <% for (var i=0; i < newListItem.length ; i++){%>
+                                <div class="item">
+                                    <input class="btn" type="checkbox">
+                                    <p class="btn">
+                                        <%= newListItem[i] %>
+                                    </p>
+                                </div>
+
+                                <% } %>
+
+
+                                    <form class="btn" action="" method="POST">
+                                        <input type="text" name="newItem" autocomplete="off">
+                                        <button class="secondary" type="submit">add list item</button>
+                                    </form>
+                                    <form class="btn" action="delete" method="Post">
+                                        <button class="btn" type="submit">delete</button>
+                                    </form>
+
+                        </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
